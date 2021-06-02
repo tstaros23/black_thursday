@@ -22,5 +22,11 @@ RSpec.describe ItemRepository do
       expect(item2.name).to eq('mattress')
       expect(@ir.all).to be_a(Array)
     end
+
+    it 'returns item with matching ID' do
+      item3 = @ir.all[-2]
+      expect(@ir.find_by_id(261876153)).to eq(item3)
+    end
+
   end
 end
